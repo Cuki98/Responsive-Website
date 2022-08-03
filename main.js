@@ -9,15 +9,24 @@ reviews = [
 
 ];
 
+var thropies = [];
+trophies = 
+[
+    {name:"Providing greatness since", startingValue:2022 , finalValue:2006 , extra:""},
+    {name:"Happy clients", startingValue:0 , finalValue:20000 , extra:"+"},
+    {name:"Product quality", startingValue:0 , finalValue:100 , extra:"%"}
+]
 
-
+var toggle = document.querySelector("#nav .toggle-btn");
+var collapse = document.querySelector("#nav .collapse");
 
 
 window.onload = function digital_fn() {
 
     UpdateReviews();
-   
-
+    UpdateTrophyStat();
+    
+    //Update current date
     switch (d.getDay()) {
         case 0:
             highlightDate('.sunday');
@@ -52,7 +61,8 @@ window.onload = function digital_fn() {
     }
 
 
-    const header = document.querySelector('.navigation-holder');
+    //INTERACTIVE NAVIGATION BAR
+    const header = document.querySelector('.interactive-navigation');
     const sectionOne = document.querySelector('.banner-area');
     const sectionOptions = {
         rootMargin: "-800px 0px 0px 0px"
@@ -68,23 +78,20 @@ window.onload = function digital_fn() {
         })
     }, sectionOptions);
 
-
+   //INTERACTIVE NAVIGATION BAR 
 
 
     sectionOneObserver.observe(sectionOne);
 
 
 
-
-
-    // toggle button
-    let toggle = document.querySelector("#nav .toggle-btn");
-    let collapse = document.querySelector("#nav .collapse");
-
+    // toggle menu button
     toggle.addEventListener('click', function (event) {
+        
         collapse.classList.toggle('active')
-        // console.log(toggle)
     });
+
+
 
     // mansonry js
     let grid = document.querySelector("#site-main .recent-work-area .images-flex");
@@ -109,6 +116,44 @@ window.onload = function digital_fn() {
     });
 
 }
+
+
+window.addEventListener("resize", displayWindowSize);
+
+function displayWindowSize(){
+    // Get width and height of the window excluding scrollbars
+    var w = document.documentElement.clientWidth;
+    var h = document.documentElement.clientHeight;
+    
+    console.log(collapse == null);
+    // Display result inside a div element
+    if(w >= 1024)
+    {
+        if(collapse.classList.contains('active'))
+        {
+            collapse.classList.remove('active');
+        }
+    }
+}
+
+
+
+
+
+document.addEventListener('click', function handleClickOutsideBox(event) {
+    const sideMenu = document.querySelector('.phone-menu');
+  
+    if(menuToggled)
+    {
+        if (!sideMenu.contains(event.target)) {
+            ToggleSideMenu();
+        }
+    }
+  });
+
+
+
+
 
 
 function highlightDate(date)
@@ -137,6 +182,101 @@ function UpdateReviews()
 
 }
 
+
+
+
+
+var sideMenuButton = document.querySelector('.side-menu-button');
+var menuToggled = false;
+var menu = document.querySelector('.phone-menu'); 
+
+sideMenuButton.addEventListener("click", () => {
+    
+    const toggleTimeout = setTimeout(()=>{
+        if(collapse.classList.contains('active'))
+        {
+            collapse.classList.remove('active');
+        }
+        ToggleSideMenu();
+    }, 2);
+});
+
+function ToggleSideMenu() {
+    
+
+
+    if(menuToggled)
+    {
+        menu.classList.remove('active');
+        
+    }
+    else
+    {
+        menu.classList.add('active');    
+    }
+    console.log(menu.classList.contains('active'));
+    menuToggled = !menuToggled;
+}
+
+
+
+
+const changingStatHeader = document.querySelector(".changing-stat-header");
+const changingStatNumber = document.querySelector(".changing-stat-number");
+var currentTrophyIndex = -1;
+
+function UpdateTrophyStat()
+{
+
+    currentTrophyIndex =randomArrayIndex(trophies , currentTrophyIndex);
+    
+    changingStatHeader.innerHTML =  trophies[currentTrophyIndex].name;
+    animateValue(changingStatNumber , trophies[currentTrophyIndex].startingValue , trophies[currentTrophyIndex].finalValue  , 500 ,
+        ()=>{
+            changingStatNumber.innerHTML = changingStatNumber.innerHTML + trophies[currentTrophyIndex].extra;
+        });
+
+    const fadeTimeout = setTimeout(()=>{
+
+        UpdateTrophyStat();
+    }, 5000);
+
+}
+
+
+
+//////////////////////////////////////////////////OBSERVERS///////////////////////////////////////////
+const faders = document.querySelectorAll('.fade-in');
+const sliders = document.querySelectorAll('.slide-in');
+const zoomers = document.querySelectorAll('.zoom');
+
+const appearOptions =
+{
+  threshold: 0,
+  rootMargin: "0px 0px -350px 0px"
+};
+const appearOnScroll = new IntersectionObserver
+  (function
+      (entries,
+          appearOnScroll
+      ) {
+
+      entries.forEach(entry => {
+          if (!entry.isIntersecting) {
+              console.warn('false');
+              return;
+          } else {
+
+              entry.target.classList.add("appear");
+              appearOnScroll.unobserve(entry.target);
+          }
+      });
+
+  }, appearOptions);
+
+
+
+///////////////////////////////////////////////UTILITY FUNCTIONS////////////////////////////////////////
 function randomArrayIndex(arr , previous = -1) {
     let num = Math.floor(Math.random() * arr.length);
 
@@ -159,34 +299,26 @@ function randomArrayIndex(arr , previous = -1) {
 
   }
 
-
-const faders = document.querySelectorAll('.fade-in');
-const sliders = document.querySelectorAll('.slide-in');
-const zoomers = document.querySelectorAll('.zoom');
-
-const appearOptions =
-{
-    threshold: 0,
-    rootMargin: "0px 0px -350px 0px"
+  function animateValue(obj, start, end, duration , callbackFunction = null) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+      if (!startTimestamp) startTimestamp = timestamp;
+      const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+      obj.innerHTML = Math.floor(progress * (end - start) + start);
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+    }
+    else
+    {
+        if(callbackFunction != null)
+        callbackFunction();
+    }
 };
-const appearOnScroll = new IntersectionObserver
-    (function
-        (entries,
-            appearOnScroll
-        ) {
 
-        entries.forEach(entry => {
-            if (!entry.isIntersecting) {
-                console.warn('false');
-                return;
-            } else {
+window.requestAnimationFrame(step);
+  }
+  /////////////////////////////////////////////UTILITY FUNCTIONS////////////////////////////////////////
 
-                entry.target.classList.add("appear");
-                appearOnScroll.unobserve(entry.target);
-            }
-        });
-
-    }, appearOptions);
 
 
 

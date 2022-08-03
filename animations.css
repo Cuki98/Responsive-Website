@@ -44,7 +44,7 @@
 
 .zoom-out
 {
-    transition: opacity 150ms ease-in-out ,transform 300ms ease-in;
+    transition: opacity 300ms ease-in-out ,transform 300ms ease-in;
     opacity: 0;
     transform: scale(1.5);
 }

@@ -16,55 +16,158 @@
 
     <link rel="stylesheet" href="particle.css">
     <link rel="stylesheet" href="animations.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
 </head>
 
-<body>
 
-    <!-- @@@@@@@@@@@@  Header Section @@@@@@@@@@@@@ -->
-    <header class="container-fluid">
-        <nav id="nav" class=" font-poppins">
-            <div class="navigation-holder container-full  position-fixed flex py-5 px-5">
+<!-- @@@@@@@@@@@@  Header Section @@@@@@@@@@@@@ -->
+<header class="container-fluid">
 
-                <div class="nav-brand">
-                    <a href="#" class="text-dark text-lg font-bold">WAXSPA</a>
-                </div>
+</header>
+<!-- @@@@@@@@@@@@  /Header Section @@@@@@@@@@@@@ -->
 
-                <div class="toggle-btn mx-auto">
-                    <button class="btn">
-                        <i class="bi bi-filter-right"></i>
-                    </button>
-                </div>
+<main class="bg-white">
 
-                <div class="collapse flex-grow">
-                    <ul class="flex ">
-                        <li>
-                            <a href="index.html" class="link">Home</a>
-                        </li>
-                        <li>
-                            <a href="#agency-area" class="link">About</a>
-                        </li>
-                        <li>
-                            <a href="#services-area" class="link">Services</a>
-                        </li>
-                        <li>
-                            <a href="#portfolio" class="link">Work</a>
-                        </li>
-                        <li>
-                            <a href="#contact" class="link">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+    <body>
+        <div class="tab-header-container faq-banner container-full text-center flex justify-center  bg-gradient-peach">
+        </div>
 
+        <div class="split container">
+            <div>
+                <img src="assets/bodyDiagram.png" usemap="#image-map" class="map">
+                <map name="image-map">
+                  <map name="map">
+                      <area target="_self" alt="head" title="head" href="#" onclick="ShowPricingList('head')" coords="216,91,219,76,214,62,212,44,220,26,233,22,247,27,250,41,252,52,250,64,246,77,250,91" shape="poly">
+                      <area target="_self" alt="body" title="body" href="#" onclick="ShowPricingList('body')" coords="196,130,197,189,191,210,273,208,269,188,272,119,267,99,252,90,233,91,210,92,199,105" shape="poly">
+                  </map>
+                </map>
             </div>
-        </nav>
-    </header>
-    <!-- @@@@@@@@@@@@  /Header Section @@@@@@@@@@@@@ -->
-    
-    <main>
-        <body>
-            <section class="Pricing py-10">
-                <div>bas</div>
-            </section>
             
-        </body>
-    </main>
+            <div class="pricing-list pricing-list-head container font-poppins  bg-white">
+                <div class="pricing-header">
+                    <div class="flex flex-space-between text-red text-uppercase">
+                        <h4>Service</h4>
+                        <h4>pricing</h4>
+                    </div>
+                </div>
+                
+                <div class="pricing-body">
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>upper lip</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Lower Lip</h4>
+                        <h4>10$</h4>
+                    </div>     <div class="pricing-row flex flex-space-between">
+                        <h4>Chin</h4>
+                        <h4>10$</h4>
+                    </div>     <div class="pricing-row flex flex-space-between">
+                        <h4>Chin w/Neck</h4>
+                        <h4>10$</h4>
+                    </div>     <div class="pricing-row flex flex-space-between">
+                        <h4>Neck (Front or Back)</h4>
+                        <h4>10$</h4>
+                    </div>    
+                     <div class="pricing-row flex flex-space-between">
+                        <h4>Side Burns</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Temples</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Eye Brows</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Eye Brows (Between)</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Cheeks</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Nose</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Ears</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Forehead</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Jaw</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Ears</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Full Face (Eye Brows are not included)</h4>
+                        <h4>10$</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="pricing-list pricing-list-body container font-poppins  bg-white">
+                <div class="pricing-header">
+                    <div class="flex flex-space-between text-red text-uppercase">
+                        <h4>Service</h4>
+                        <h4>pricing</h4>
+                    </div>
+                </div>
+                
+                <div class="pricing-body">
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>upper lip</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Lower Lip</h4>
+                        <h4>10$</h4>
+                    </div>     <div class="pricing-row flex flex-space-between">
+                        <h4>Chin</h4>
+                        <h4>10$</h4>
+                    </div>     <div class="pricing-row flex flex-space-between">
+                        <h4>Chin w/Neck</h4>
+                        <h4>10$</h4>
+                    </div>     <div class="pricing-row flex flex-space-between">
+                        <h4>Neck (Front or Back)</h4>
+                        <h4>10$</h4>
+                    </div>    
+                     <div class="pricing-row flex flex-space-between">
+                        <h4>Side Burns</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Temples</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Eye Brows</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Eye Brows (Between)</h4>
+                        <h4>10$</h4>
+                    </div>
+                    <div class="pricing-row flex flex-space-between">
+                        <h4>Cheeks</h4>
+                        <h4>10$</h4>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+        </div>
+    </body>
+    <script src="bodyDiagram.js"></script>
+</main>
