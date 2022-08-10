@@ -6,17 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WAX SPA- simply the best waxing spa</title>
-    <link rel="shortcut icon" href="assets/logo.png"/>
+    <link rel="shortcut icon" href="assets/logo.png" />
 
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.7.0/font/bootstrap-icons.min.css"
         integrity="sha512-yLNTU6YQWEtsM/WVkUqd2jRzzq5hmfFUMVvziVlkgC0R9HTElDtyF4DiWiBeMS36npvN+NWwrr764A4AWGcmQQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- stylesheet -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 
-    <link rel="stylesheet" href="particle.css">
-    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="css/particle.css">
+    <link rel="stylesheet" href="css/animations.css">
 </head>
 
 <body>
@@ -293,7 +293,7 @@
                                         permanent
                                         makeup <i class="bi bi-arrow-right-circle"></i>
                                     </h1>
-                                    <img class="image-sizing" src="assets/PermanentMakeup.jpg" alt="">
+                                    <img class="image-sizing" src="assets/Main/Services/PermanentMakeup.jpg" alt="">
                                 </div>
                             </a>
 
@@ -302,7 +302,7 @@
                                     eyebrows
                                     <i class="bi bi-arrow-right-circle"></i>
                                 </h1>
-                                <img class="image-sizing" src="assets/Eyelashes.jpg" alt="">
+                                <img class="image-sizing" src="assets/Main/Services/Eyelashes.jpg" alt="">
                             </div>
 
                             <div class="service-item container container--full  slide-in from-left ">
@@ -313,14 +313,14 @@
                                     </h1>
 
                                 </div>
-                                <img class="image-sizing" src="assets/bodyContouring.jpg" alt="">
+                                <img class="image-sizing" src="assets/Main/Services/bodyContouring.jpg" alt="">
                             </div>
 
                             <div class="service-item container container--full  slide-in from-right ">
                                 <h1 class="text-center top-left text-uppercase text-white font-poppins">full waxing
                                     <i class="bi bi-arrow-right-circle"></i>
                                 </h1>
-                                <img class="image-sizing" src="assets/waxing.jpg" alt="">
+                                <img class="image-sizing" src="assets/Main/Services/waxing.jpg" alt="">
                             </div>
 
                         </div>
@@ -344,11 +344,11 @@
             <section class="container mx-auto life-area" id="contact">
                 <div class="grid cols-1 lg-cols-2 text-centered md-text-left">
                     <div class="grid-images">
-                        <div class="item-one"></div>
-                        <div class="item-two"></div>
-                        <div class="item-three"></div>
+                        <div class="item-one zoom zoom-out"></div>
+                        <div class="item-two zoom zoom-out"></div>
+                        <div class="item-three zoom zoom-out"></div>
                     </div>
-                    <div class="py-5">
+                    <div class="py-5 fade-in">
                         <div class="font-poppins flex flex-column justify-center">
                             <h1 class="text-uppercase text-lg text-dark text-center "> Come visit us! </h1>
                             <div class="flex justify-center">
@@ -460,7 +460,7 @@
 
 
             <!-- card area -->
-            <section class="container mx-auto card-area py-10">
+            <section class="container mx-auto card-area py-10 fade-in ">
                 <div class="grid cols-1 lg-cols-3 font-poppins text-sm">
                     <div class="bg-gradient-peach">
                         <div class="card px-10 py-10 flex flex-column justify-center">
@@ -514,26 +514,26 @@
                 </div>
                 <div class="container grid-auto font-poppins">
                     <div class="flex-item">
-                        <img src="./assets/eyeb.jpg" alt="img1" class="image-sizing">
+                        <img src="../assets/Main/portfolio/p1.jpg" alt="img1" class="image-sizing">
                     </div>
                     <div class="flex-item">
-                        <img src="./assets/eyeb.jpg" alt="img1" class="image-sizing">
+                        <img src="../assets/Main/portfolio/p2.jpg" alt="img1" class="image-sizing">
 
                     </div>
                     <div class="flex-item">
-                        <img src="./assets/eyeb.jpg" alt="img1" class="image-sizing">
+                        <img src="../assets/Main/portfolio/p3.webp" alt="img1" class="image-sizing">
 
                     </div>
                     <div class="flex-item">
-                        <img src="./assets/eyeb.jpg" alt="img1" class="image-sizing">
+                        <img src="../assets/Main/portfolio/p4.jpg" alt="img1" class="image-sizing">
 
                     </div>
                     <div class="flex-item">
-                        <img src="./assets/eyeb.jpg" alt="img1" class="image-sizing">
+                        <img src="../assets/Main/portfolio/p5.jpg" alt="img1" class="image-sizing">
 
                     </div>
                     <div class="flex-item">
-                        <img src="./assets/eyeb.jpg" alt="img1" class="image-sizing">
+                        <img src="../assets/Main/portfolio/p6.jpg" alt="img1" class="image-sizing">
 
                     </div>
 
@@ -561,11 +561,16 @@
 
 
     <!-- scripts -->
+    <script src="js/nav.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/footer.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js"
         integrity="sha512-coKEwkkVJR6lO1aL/rJeVFojNKG1DRNbAfuxcvFC98W9TYBO9TQIVFXiHBBx6dRL9+effSNEYIr/5vLe5HENVg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="main.js"></script>
+
+    <!-- /scripts -->
 
     <footer>
         <div class="container-full bg-black text-white font-poppins">
